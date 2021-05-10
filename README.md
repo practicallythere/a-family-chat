@@ -1,5 +1,4 @@
-# a-family-chat
-MACD Publishing Platforms digital component
+# A Family Chat
 
 These files exist as part of work created while participating on the Publishing Platforms as part of the Communication Design MA course at the University of Reading.
 
