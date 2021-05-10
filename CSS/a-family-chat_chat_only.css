@@ -1,0 +1,170 @@
+.media>img {
+  display: none;
+}
+
+@media print {
+  .pagedjs_left_page.pagedjs_chat_page .pagedjs_sheet::before {
+    content: "";
+    height: calc(210mm + 6mm + 6mm);
+    width: calc(17mm + 6mm);
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: white;
+  }
+  .pagedjs_right_page.pagedjs_chat_page .pagedjs_sheet::before {
+    content: "";
+    height: calc(210mm + 6mm + 6mm);
+    width: calc(17mm + 6mm);
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+    background-color: white;
+  }
+  .shim-div {
+    outline: 3px solid orange;
+    background-color: aqua;
+  }
+  @page chat {
+    padding: 0 6mm;
+    background-color: var(--primaryColour);
+    margin-bottom: 12mm;
+    margin-top: 12mm;
+  }
+  @page chat:right {
+    margin-right: 17mm;
+    margin-left: 14mm;
+    @right-top {
+      content: string(runningHead);
+      font-size: 1.15rem;
+      white-space: nowrap;
+      width: 50mm;
+      height: 11.5mm;
+      transform: rotate(-90deg);
+      transform-origin: top left;
+      position: relative;
+      top: 50mm;
+      text-align: right;
+      left: 3mm;
+      color: rgba(0, 0, 0, 0.5);
+    }
+    @right-bottom {
+      content: counter(page);
+      text-align: left;
+      height: 0mm;
+      transform: rotate(-90deg);
+      transform-origin: top left;
+      position: relative;
+      left: 8mm;
+      text-align: left;
+      vertical-align: bottom;
+      font-size: 1.15rem;
+      color: rgba(0, 0, 0, 0.5);
+    }
+  }
+  .message_wrapper.special {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    font-weight: 400;
+    font-style: normal;
+  }
+  .message_wrapper.special .date_and_time {
+    align-self: center;
+  }
+  .message_wrapper.special .message_text {
+    font-size: 1.6em;
+  }
+  .message_wrapper.letter {
+    width: 100%;
+  }
+  .message_wrapper.letter .message_content::before {
+    content: attr(data-author) ", " attr(data-time);
+    text-transform: uppercase;
+    color: red;
+    padding-bottom: 1em;
+    display: block;
+  }
+  .message_wrapper.letter .message_text {
+    font-size: 1.7em;
+  }
+  .message_wrapper.letter .message_content {
+    background-color: cornsilk;
+    font-family: Helvetica, sans-serif;
+    padding: 1.7em;
+    padding-top: 4em;
+    font-weight: semibold;
+  }
+  .message_wrapper.spook .message_content::before {
+    content: attr(data-author) ", " attr(data-time);
+    text-transform: uppercase;
+    color: red;
+    padding-bottom: 1em;
+    display: block;
+  }
+  .message_wrapper.spook .message_text {
+    font-size: 1.7em;
+  }
+  .message_wrapper.spook .message_content {
+    background-color: rgb(43, 43, 43);
+    font-family: Helvetica, sans-serif;
+    padding: 1.7em;
+    padding-top: 4em;
+    color: white;
+    font-family: 'capellina-rough', sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  @page chat:left {
+    margin-right: 14mm;
+    margin-left: 17mm;
+    @left-top {
+      content: "Sibling the Best " string(runningHeadYear);
+      width: 100mm;
+      height: 14mm;
+      transform: rotate(-90deg);
+      transform-origin: top left;
+      position: relative;
+      top: 100mm;
+      text-align: right;
+      vertical-align: bottom;
+      color: rgba(0, 0, 0, 0.5);
+    }
+    @left-bottom {
+      content: counter(page);
+      height: 0mm;
+      transform: rotate(-90deg);
+      transform-origin: top left;
+      position: relative;
+      left: 14mm;
+      text-align: left;
+      vertical-align: bottom;
+      color: rgba(0, 0, 0, 0.5);
+    }
+  }
+}
+
+.shim {
+  height: 65mm;
+}
+
+.message_content {
+  color: black;
+}
+
+@page :blank {
+  @left-bottom {
+    content: none;
+  }
+  @right-bottom {
+    content: none;
+  }
+  @left-top {
+    content: none;
+  }
+  @right-top {
+    content: none;
+  }
+}

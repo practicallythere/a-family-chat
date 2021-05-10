@@ -1,0 +1,19 @@
+
+/* to prevent clipping at bottom of page*/
+.pagedjs_chat_page .pagedjs_pagebox > .pagedjs_area > .pagedjs_page_content {
+  height: auto; 
+}
+
+.pagedjs_pages > .pagedjs_page > .pagedjs_sheet > .pagedjs_pagebox > .pagedjs_area > div [data-split-from]::before
+{
+  content: "";
+}
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,522 @@
+ul[class], ol[class] {
+  padding: 0;
+}
+
+body, h1, h2, h3, h4, p, ul[class], ol[class], li, figure, figcaption, blockquote, dl, dd {
+  margin: 0;
+}
+
+body {
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.4;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+ul[class], ol[class] {
+  list-style: none;
+}
+
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+input, button, textarea, select {
+  font: inherit;
+}
+
+:root {
+  --indent: 100px;
+  --h2shim: 1.2rem;
+  --primaryColour: #e7e4dd;
+  --robbie: hsl(215, 66%, 78%);
+  --beth: hsl(41, 91%, 68%);
+  --tom: hsl(10, 75%, 72%);
+}
+
+html {
+  font-size: 11px;
+}
+
+@font-face {
+  font-family: 'InterLocalRegular';
+  src: url("http://localhost:8888/whatsapp_html/fonts/Inter-3_10/Inter_TTF/Inter-Regular.ttf") format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'InterLocalRegularItalic';
+  src: url("http://localhost:8888/whatsapp_html/fonts/Inter-3_10/Inter_TTF/Inter-Italic.ttf") format('truetype');
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'InterLocalSemiBold';
+  src: url("http://localhost:8888/whatsapp_html/fonts/Inter-3_10/Inter_TTF/Inter-SemiBold.ttf") format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'InterLocalBold';
+  src: url("http://localhost:8888/whatsapp_html/fonts/Inter-3_10/Inter_TTF/Inter-Bold.ttf") format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+body {
+  font-family: 'InterLocalRegular', Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+div {
+  display: block;
+}
+
+h1, h2, h3, h4 {
+  margin-bottom: .1em;
+}
+
+h1 {
+  font-size: 5em;
+  font-family: 'InterLocalRegular', Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  text-align: center;
+  letter-spacing: -.02em;
+}
+
+h2 {
+  font-size: 3em;
+  font-family: 'InterLocalSemiBold', Arial, Helvetica, sans-serif;
+  font-weight: 600;
+  text-align: center;
+}
+
+h3 {
+  font-size: 1.5em;
+  font-family: 'InterLocalBold', Arial, Helvetica, sans-serif;
+}
+
+h4 {
+  font-size: 1em;
+  font-family: 'InterLocalBold', Arial, Helvetica, sans-serif;
+}
+
+a {
+  text-underline-position: from-font;
+  color: currentColor;
+}
+
+#chat {
+  page: chat;
+}
+
+#frontmatter {
+  page: frontMatter;
+}
+
+.message_group {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto;
+  gap: 0px 0px;
+  grid-template-areas: "author" "messages";
+  font-size: 1rem;
+  margin-bottom: 2mm;
+}
+
+.message_wrapper {
+  display: grid;
+  grid-template-columns: auto var(--indent);
+  grid-template-areas: "content time";
+  margin-bottom: .3em;
+}
+
+.message_wrapper:last-child {
+  margin-bottom: 0;
+}
+
+div.day>div.message_group:nth-child(2n+1) div.message_wrapper {
+  grid-template-areas: ". author" "time content" !important;
+  grid-template-columns: var(--indent) auto !important;
+}
+
+div.day>div.message_group:nth-child(2n+1) h4.author_new {
+  margin-left: var(--indent);
+  text-align: right;
+}
+
+div.day>div.message_group:nth-child(2n+1) .date_and_time {
+  text-align: right;
+}
+
+.message_wrapper>div {
+  padding: .5em .7em;
+}
+
+.message_content * {
+  width: fit-content;
+  min-width: calc(var(--indent)*1.5);
+}
+
+.message_content {
+  background-color: white;
+  grid-area: content;
+  word-break: break-word;
+  color: black;
+  border-radius: 1mm;
+  border: 1px solid rgba(0, 0, 0, .1);
+  background-clip: padding-box;
+}
+
+.date_and_time {
+  grid-area: time;
+  align-self: end;
+}
+
+.quote p {
+  margin-bottom: 0;
+  font-family: 'InterLocalRegularItalic';
+  font-weight: normal;
+  font-style: italic;
+}
+
+.qmeta {
+  font-family: 'InterLocalSemiBold';
+  font-weight: 600;
+  font-style: normal;
+}
+
+.qmeta>span:not(:last-child):after, .media>*:not(:last-child):after {
+  content: " ";
+}
+
+.media {
+  padding-left: 12mm;
+}
+
+.media::before {
+  content: url(http://localhost:8888/whatsapp_html/assets/paperclip.svg);
+  width: 10mm;
+  margin-left: -12mm;
+  position: absolute;
+  margin-top: .5mm
+}
+
+.message_content>.media:nth-child(2) {
+  margin-top: .5em;
+  padding-top: .5em;
+  border-top: 1px solid lightgray;
+}
+
+.date_new {
+  text-align: left;
+  margin: 2.5em auto 1.5em;
+  font-size: 1.4em;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  font-family: 'InterLocalBold', Arial, Helvetica, sans-serif;
+  font-weight: 800;
+  font-style: normal;
+  width: 100%;
+  position: relative;
+  border-bottom: 2px solid currentColor;
+  padding-bottom: .2em;
+}
+
+.date_new:after {
+  content: "";
+  position: absolute;
+  display: block;
+  height: 100%;
+  width: 50px;
+  background-color: var(--primaryColour);
+  right: 117%;
+  border-radius: 1mm;
+  top: 3px;
+}
+
+.suffix {
+  font-family: 'InterLocalRegular', Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  text-transform: lowercase;
+  letter-spacing: normal;
+  vertical-align: text-top;
+  font-size: .7em;
+}
+
+.date_new:before {
+  content: "#"counter(dateNew);
+  font-family: 'InterLocalRegular', Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  letter-spacing: normal;
+}
+
+.month+.date_new {
+  margin-top: 0mm !important;
+  padding-bottom: .45em !important;
+}
+
+.pagedjs_left_page .date_new:before {
+  position: absolute;
+  right: 0
+}
+
+.pagedjs_right_page .date_new:before {
+  position: absolute;
+  left: 0;
+}
+
+.pagedjs_right_page .date_new {
+  text-align: right;
+}
+
+.pagedjs_right_page .date_new:after {
+  content: "";
+  position: absolute;
+  display: block;
+  height: 100%;
+  width: 50px;
+  background-color: var(--primaryColour);
+  left: 117%;
+  border-radius: 1mm;
+  top: 3px;
+}
+
+div[data-id="chat"]>div.day:first-child>h3.date_new {
+  margin-top: 0;
+}
+
+.month+h3.date_new>span.date_month {
+  display: none;
+}
+
+.author_new {
+  grid-area: author;
+  margin-left: .2mm;
+  margin-right: .2mm;
+}
+
+.messages {
+  grid-area: messages;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+}
+
+div.day>div.message_group:nth-child(2n+1) .messages {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end !important;
+}
+
+.quote {
+  margin-bottom: .5em;
+  padding-left: .5em;
+  position: relative;
+}
+
+.quote:before {
+  content: "";
+  background: black;
+  position: absolute;
+  top: .225em;
+  left: 0;
+  height: calc(100% - 5px);
+  width: 1px;
+}
+
+.break {
+  break-after: always;
+}
+
+.cover {
+  font-size: 1.5rem;
+}
+
+@media print {
+  .date_new {
+    break-after: avoid;
+  }
+  .year+.month {
+    break-before: avoid;
+  }
+  .pagedjs_left_page .pagedjs_margin-left {
+    font-family: 'InterLocalRegular', Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-size: 1.15rem;
+  }
+  .pagedjs_left_page .messages::before {
+    content: "";
+    position: absolute;
+    left: -113px;
+    width: 45px;
+    height: 100%;
+    border-radius: 1mm;
+  }
+  .pagedjs_right_page .messages::before {
+    content: "";
+    position: absolute;
+    right: -113px;
+    width: 45px;
+    height: 100%;
+    border-radius: 1mm;
+  }
+  .message_group[data-author="robbie"] .messages::before {
+    background-color: var(--robbie);
+  }
+  .message_group[data-author="beth"] .messages::before {
+    background-color: var(--beth);
+  }
+  .message_group[data-author="tom"] .messages::before {
+    background-color: var(--tom);
+  }
+  @page {
+    size: A5;
+    marks: crop;
+    bleed: 6mm;
+  }
+  .author_new {
+    string-set: runningHead content(text);
+  }
+  .month {
+    string-set: runningHead content(text);
+  }
+  body {
+    counter-reset: dateNew;
+    counter-reset: yearIndex;
+  }
+  .year {
+    counter-increment: yearIndex;
+    string-set: runningHeadYear content(text);
+    break-before: page;
+    text-align: left;
+  }
+  .pagedjs_right_page .year {
+    text-align: right;
+  }
+  .year, .month {
+    margin: 10mm auto 8mm auto;
+  }
+  .month {
+    margin-bottom: 0;
+    text-align: left;
+    font-family: 'InterLocalRegular', Arial, Helvetica, sans-serif;
+    font-weight: 400;
+  }
+  .pagedjs_right_page .month {
+    text-align: right;
+  }
+  .date_new {
+    counter-increment: dateNew;
+    string-set: runningHead content(text);
+  }
+  .media_num {
+    font-family: 'InterLocalSemiBold', Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    font-style: normal;
+  }
+  .media_num::before {
+    content: "#";
+    font-family: 'InterLocalSemiBold', Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    font-style: normal;
+  }
+}
+
+@page frontMatter {
+  background-color: var(--primaryColour);
+}
+
+.pagedjs_frontMatter_page {
+  font-size: 1.1em;
+  line-height: 1.5em;
+}
+
+.pagedjs_frontMatter_page p {
+  margin-bottom: 1em;
+}
+
+#toc {
+  columns: 2;
+  height: 10cm;
+}
+
+.pagedjs_frontMatter_page h2 {
+  text-align: left;
+  font-weight: 600;
+  font-family: 'InterLocalSemibold';
+  margin-bottom: 1em;
+  column-span: all;
+  color: white;
+}
+
+.pagedjs_frontMatter_page h3 {
+  font-size: 1.3em;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  column-span: all;
+  margin-top: 1em;
+  color: white;
+}
+
+.pagedjs_frontMatter_page h4 {
+  column-span: all;
+  margin-top: 1em;
+}
+
+.pagedjs_frontMatter_page .note p.first {
+  font-weight: 600 !important;
+  font-family: 'InterLocalSemibold';
+}
+
+#toc .entry {
+  display: grid;
+  grid-template-columns: auto max-content;
+  grid-template-areas: "chapter page";
+  align-items: end;
+  gap: 0 .25rem;
+  margin-bottom: .2em;
+}
+
+#toc .chapter {
+  grid-area: chapter;
+}
+
+#toc .page {
+  grid-area: page;
+}
+
+#toc .entry {
+  display: grid;
+  grid-template-columns: auto max-content;
+  grid-template-areas: "chapter page";
+  align-items: end;
+  gap: 0 .25rem;
+}
+
+#toc .chapter {
+  grid-area: chapter;
+  position: relative;
+  overflow: hidden;
+}
+
+#toc div.chapter::after {
+  position: absolute;
+  padding-left: .10ch;
+  padding-right: .10ch;
+  content: " . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . " ". . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . " ". . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ";
+  text-align: right;
+}
+
+#toc a {
+  text-decoration: none;
+}
+
+#toc .page {
+  grid-area: page;
+}

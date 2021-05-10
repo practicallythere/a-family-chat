@@ -1,0 +1,138 @@
+:root {
+  --mediaWrapperHeight: 125mm;
+  --myOuterMargin: 8mm;
+}
+
+.pagedjs_media_page .pagedjs_pagebox>.pagedjs_area>.pagedjs_page_content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#images {
+  page: media;
+  break-before: right;
+}
+
+.media_wrapper {
+  display: flex;
+  border-radius: 1mm;
+  justify-content: center;
+  align-items: center;
+  padding: 3mm 4mm;
+  margin: 0 auto;
+  border: 1px solid currentColor;
+  width: auto;
+  break-after: page;
+}
+
+.media_wrapper img {
+  margin: 0 auto;
+  max-width: 400px;
+  height: auto;
+  max-height: 600px;
+}
+
+img.image_portrait {
+  max-height: 500px;
+  width: auto;
+}
+
+img.image_landscape {
+  max-width: 400px;
+  height: auto;
+}
+
+.media_wrapper>div {
+  align-self: center;
+  display: grid;
+  grid-template-areas: "top" "middle" "bottom";
+  grid-template-rows: min-content auto min-content;
+  text-align: center;
+  grid-gap: 3mm;
+  font-size: 11.5px;
+}
+
+.image_wrapper {
+  align-self: center;
+  background-color: white;
+  border-radius: 1mm;
+  padding: 4mm;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  margin: 0 auto;
+}
+
+.image_wrapper>* {
+  display: block;
+}
+
+.media_format {
+  string-set: mediaFormatIndex content(before);
+}
+
+.media_meta>span:not(:last-child):after {
+  content: " "
+}
+
+.media_num_images {
+  position: running(mediaNum);
+  font-size: 2em;
+  font-family: 'InterLocalSemiBold', Arial, Helvetica, sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.media_num::before, .media_num_images::before {
+  content: "#";
+}
+
+.media_author::before {
+  content: "shared by ";
+}
+
+.media_date::before {
+  content: "on ";
+}
+
+.media_date>a {
+  color: inherit;
+  text-decoration: none;
+}
+
+@media print {
+  @page media {
+    margin-top: 12mm;
+    margin-bottom: 14mm;
+  }
+  @page media:right {
+    margin-left: 12mm;
+    margin-right: 8mm;
+    @top-right {
+      content: "";
+      font-size: 1.15rem;
+      white-space: nowrap;
+      color: black;
+      align-items: flex-end;
+    }
+    @bottom-right {
+      content: element(mediaNum);
+      align-items: flex-start;
+    }
+  }
+  @page media:left {
+    margin-left: 8mm;
+    margin-right: 12mm;
+    @top-left {
+      content: "";
+      white-space: nowrap;
+      align-items: flex-end;
+    }
+    @bottom-left {
+      content: element(mediaNum);
+      align-items: flex-start;
+    }
+  }
+}
