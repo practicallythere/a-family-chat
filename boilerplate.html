@@ -1,18 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<title>Title</title>
-	<link href="http://localhost:8888/whatsapp_html/css/interface.css" rel="stylesheet" type="text/css">
-	<link rel="stylesheet" type="text/css" href="http://localhost:8888/whatsapp_html/css/whatsapp.css">
-	<link rel="stylesheet" type="text/css" href="http://localhost:8888/whatsapp_html/css/whatsapp_chat_only.css" />
-	<link rel="stylesheet" type="text/css" href="http://localhost:8888/whatsapp_html/css/whatsapp_images_only.css" />
-	<script src="https://unpkg.com/pagedjs/dist/paged.polyfill.js"></script>
-	<script src="https://unpkg.com/fast-average-color/dist/index.min.js"></script>
-	<script src="http://localhost:8888/whatsapp_html/js/whatsapp_color_average_fac_chat.js"></script>
-	<script src="http://localhost:8888/whatsapp_html/js/whatsapp_css_after_parse.js"></script>
+    <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Title</title>
+    <link href="http://localhost:8888/whatsapp_html/css/interface.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="http://localhost:8888/whatsapp_html/css/whatsapp.css">
+    <link rel="stylesheet" type="text/css" href="http://localhost:8888/whatsapp_html/css/whatsapp_chat_only.css" />
+    <link rel="stylesheet" type="text/css" href="http://localhost:8888/whatsapp_html/css/whatsapp_images_only.css" />
+    <script src="https://unpkg.com/pagedjs/dist/paged.polyfill.js"></script>
+    <script src="https://unpkg.com/fast-average-color/dist/index.min.js"></script>
+    <script src="http://localhost:8888/whatsapp_html/js/whatsapp_color_average_fac_chat.js"></script>
+    <script src="http://localhost:8888/whatsapp_html/js/whatsapp_css_after_parse.js"></script>
 </head>
+
 <body style="-webkit-print-color-adjust:exact; color-adjust: exact;">
-	<!-- chat and image gallery markups goes here -->
+    <!-- TEMPLATE FOR CHAT MESSAGES -->
+    <!-- Entire conversation is wrapped -->
+    <div id="chat">
+
+        <!-- Messages are grouped by day -->
+        <div class="day">
+
+            <!-- optional -->
+            <h1 class="year">2020</h1>
+            <h2 class="month" id="20_03">March</h2>
+
+            <!-- required -->
+            <h3 class="date_new">Sunday <span class="date_month">March </span>14<span class="suffix">th</span></h3>
+
+            <!-- images by the same consecutive author are grouped -->
+            <div class="message_group" data-author="beth">
+                <h4 class="author_new">Beth</h4>
+
+                <!-- wrapper for multiple messages -->
+                <div class="messages">
+
+                    <!-- wrapper for individual messages -->
+                    <div class="message_wrapper">
+
+                        <!-- if date is consecutive, leave blank and use "time_same" class instead -->
+                        <div class="date_and_time"><span class="time_new">08:17</span></div>
+
+                        <!-- contents of messsage -->
+                        <div class="message_content" id="message121">
+                            <div class="message_text">Message text goes here.</div>
+
+                            <!-- only present if messages quotes another message -->
+                            <div class="quote">
+                                <div class="qmessage">What's up siblings?</div>
+                                <div class="qmeta">
+                                    <span class="qauthor">Tom</span>
+                                    <span class="qdate">20/03</span>
+                                    <span class="qtime">06:54</span>
+                                </div>
+                            </div>
+
+                            <!-- only present if message contains a media attachment -->
+                            <div class="media">
+                                <span class="media_num">3</span>
+                                <span class="media_format">[image]</span><img class="chat_image" src="media/saturated/2020_04_02_064643_5F019A7534CD94BF0F00BBB3E4D0EB9A.jpeg" alt="colour only" />
+                                <div class="media_link"><a href="#media3">2020_04_02_064643_5F019A7534CD94BF0F00BBB3E4D0EB9A.jpeg</a></div>
+                            </div>
+
+                        </div>
+                        <!-- message_content -->
+                    </div>
+                    <!-- message_wrapper -->
+                </div>
+                <!-- messages -->
+            </div>
+            <!-- message_group -->
+        </div>
+        <!-- day -->
+    </div>
+    <!-- chat -->
+
+    <!-- TEMPLATE FOR IMAGE GALLERY -->
+    <!-- Entire image gallery is wrapped -->
+    <div id="images">
+
+        <!-- Wrapper for page content -->
+        <div class="media_wrapper">
+
+
+            <div class="media_index" id="media1">
+                <div class="media_filename">2020_03_19_201852_3A24495A554E1D573F9E.jpeg</div>
+                <div class="image_wrapper">
+                    <img src="media/2020_03_19_201852_3A24495A554E1D573F9E.jpeg" class="image_landscape" alt="2020_03_19" />
+                </div>
+                <div class="media_meta">
+                    <span class="media_num_images">1</span>
+                    <span class="media_format">Image</span>
+                    <span class="media_author">Beth</span>
+                    <span class="media_date">
+                        <a href="#message44">19/03/20</a>
+                    </span>
+                </div>
+                <!-- media_meta -->
+            </div>
+            <!-- media_index -->
+        </div>
+        <!-- media_wrapper -->
+    </div>
+    <!-- images -->
+
 </body>
+
 </html>
