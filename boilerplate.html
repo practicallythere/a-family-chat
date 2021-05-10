@@ -16,38 +16,32 @@
 
 <body style="-webkit-print-color-adjust:exact; color-adjust: exact;">
     <!-- TEMPLATE FOR CHAT MESSAGES -->
-    <!-- Entire conversation is wrapped -->
+
     <div id="chat">
+        <!-- Entire conversation is wrapped -->
 
-        <!-- Messages are grouped by day -->
         <div class="day">
+            <!-- Messages are grouped by day -->
 
-            <!-- optional -->
-            <h1 class="year">2020</h1>
-            <h2 class="month" id="20_03">March</h2>
-
-            <!-- required -->
+            <h1 class="year">2020</h1> <!-- optional -->
+            <h2 class="month" id="20_03">March</h2> <!-- optional -->
             <h3 class="date_new">Sunday <span class="date_month">March </span>14<span class="suffix">th</span></h3>
+            <!-- required -->
 
-            <!-- images by the same consecutive author are grouped -->
             <div class="message_group" data-author="beth">
+                <!-- images by the same consecutive author are grouped -->
                 <h4 class="author_new">Beth</h4>
-
-                <!-- wrapper for multiple messages -->
                 <div class="messages">
-
-                    <!-- wrapper for individual messages -->
+                    <!-- wrapper for multiple messages -->
                     <div class="message_wrapper">
-
-                        <!-- if date is consecutive, leave blank and use "time_same" class instead -->
+                        <!-- wrapper for individual messages -->
                         <div class="date_and_time"><span class="time_new">08:17</span></div>
-
-                        <!-- contents of messsage -->
-                        <div class="message_content" id="message121">
+                        <!-- if date is consecutive, leave blank and use "time_same" class instead -->
+                        <div class="message_content" id="message44">
+                            <!-- contents of messsage -->
                             <div class="message_text">Message text goes here.</div>
-
-                            <!-- only present if messages quotes another message -->
                             <div class="quote">
+                                <!-- only present if messages quote another message -->
                                 <div class="qmessage">What's up siblings?</div>
                                 <div class="qmeta">
                                     <span class="qauthor">Tom</span>
@@ -55,55 +49,44 @@
                                     <span class="qtime">06:54</span>
                                 </div>
                             </div>
-
-                            <!-- only present if message contains a media attachment -->
                             <div class="media">
-                                <span class="media_num">3</span>
-                                <span class="media_format">[image]</span><img class="chat_image" src="media/saturated/2020_04_02_064643_5F019A7534CD94BF0F00BBB3E4D0EB9A.jpeg" alt="colour only" />
-                                <div class="media_link"><a href="#media3">2020_04_02_064643_5F019A7534CD94BF0F00BBB3E4D0EB9A.jpeg</a></div>
+                                <!-- only present if message contains a media attachment -->
+                                <span class="media_num">33</span>
+                                <span class="media_format">[image]</span><img class="chat_image"
+                                    src="media/saturated/2020_04_02_064643_5F019A7534CD94BF0F00BBB3E4D0EB9A.jpeg"
+                                    alt="colour only" />
+                                <div class="media_link"><a
+                                        href="#media3">2020_04_02_064643_5F019A7534CD94BF0F00BBB3E4D0EB9A.jpeg</a></div>
                             </div>
-
-                        </div>
-                        <!-- message_content -->
-                    </div>
-                    <!-- message_wrapper -->
-                </div>
-                <!-- messages -->
-            </div>
-            <!-- message_group -->
-        </div>
-        <!-- day -->
-    </div>
-    <!-- chat -->
+                        </div> <!-- message_content -->
+                    </div> <!-- message_wrapper -->
+                </div> <!-- messages -->
+            </div> <!-- message_group -->
+        </div> <!-- day -->
+    </div> <!-- chat -->
 
     <!-- TEMPLATE FOR IMAGE GALLERY -->
-    <!-- Entire image gallery is wrapped -->
     <div id="images">
-
-        <!-- Wrapper for page content -->
+        <!-- Entire image gallery is wrapped -->
         <div class="media_wrapper">
-
-
+            <!-- Wrapper for page content -->
             <div class="media_index" id="media1">
-                <div class="media_filename">2020_03_19_201852_3A24495A554E1D573F9E.jpeg</div>
+                <div class="media_filename">2020_04_02_064643_5F019A7534CD94BF0F00BBB3E4D0EB9A.jpeg</div>
                 <div class="image_wrapper">
-                    <img src="media/2020_03_19_201852_3A24495A554E1D573F9E.jpeg" class="image_landscape" alt="2020_03_19" />
+                    <img src="media/2020_04_02_064643_5F019A7534CD94BF0F00BBB3E4D0EB9A.jpeg" class="image_landscape"
+                        alt="2020_03_19" />
                 </div>
                 <div class="media_meta">
-                    <span class="media_num_images">1</span>
+                    <span class="media_num_images">33</span>
                     <span class="media_format">Image</span>
                     <span class="media_author">Beth</span>
                     <span class="media_date">
-                        <a href="#message44">19/03/20</a>
+                        <a href="#message44"20/03/20</a>
                     </span>
                 </div>
-                <!-- media_meta -->
-            </div>
-            <!-- media_index -->
-        </div>
-        <!-- media_wrapper -->
-    </div>
-    <!-- images -->
+            </div> <!-- media_index -->
+        </div> <!-- media_wrapper -->
+    </div> <!-- images -->
 
 </body>
 
