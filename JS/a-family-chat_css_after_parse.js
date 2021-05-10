@@ -9,7 +9,7 @@ class addCSS extends Paged.Handler {
             var link  = document.createElement('link');
             link.rel  = 'stylesheet';
             link.type = 'text/css';
-            link.href = 'http://localhost:8888/whatsapp_html/css/whatsapp_after_parse.css';
+            link.href = 'css/a-family-chat_after_parse.css';
             link.media = 'all';
             head.appendChild(link);
     }
